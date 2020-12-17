@@ -96,5 +96,19 @@ public class PicServiceController {
 			throw new  UsernameNotFoundException("User " + picture.getUserName() + " not allowed to make change");
 		}
 	}
+	
+	@ResponseStatus(HttpStatus.CREATED)
+	@RequestMapping(value = "/editprivate", method = RequestMethod.PUT)
+	public Picture updatePrivate(@RequestBody Picture picture, Principal principal){
+		
+		//security check
+		if(picture.getUserName().equals(principal.getName())) {
+		return picServiceDAO.updateFavorite(picture);
+		}else {
+			throw new  UsernameNotFoundException("User " + picture.getUserName() + " not allowed to make change");
+		}
+	}
 
 }
+
+
