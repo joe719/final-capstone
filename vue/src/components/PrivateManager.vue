@@ -40,8 +40,8 @@ export default {
         .editPrivate(photo)
         .then((res) => {
           if (res.status === 201) {
-            // this.$store.commit("EDIT_PRIVATE", res.data);
-            // this.privated = this.photo.private;
+            this.$store.commit("EDIT_PRIVATE", res.data);
+            this.privated = this.photo.private;
           }
         })
         .catch((err) => {

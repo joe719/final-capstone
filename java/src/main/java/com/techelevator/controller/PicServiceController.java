@@ -103,7 +103,7 @@ public class PicServiceController {
 		
 		//security check
 		if(picture.getUserName().equals(principal.getName())) {
-		return picServiceDAO.updateFavorite(picture);
+		return picServiceDAO.updatePrivate(picture);
 		}else {
 			throw new  UsernameNotFoundException("User " + picture.getUserName() + " not allowed to make change");
 		}

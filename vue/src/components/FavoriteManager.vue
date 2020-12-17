@@ -1,10 +1,18 @@
 <template>
   <div id="favbtn2">
     <div v-if="isUsersPic">
-      <a v-if="!favorited" @click="editFavorite(photo)"
+      <a
+        data-toggle="tooltip"
+        title="Add to Favorites"
+        v-if="!favorited"
+        @click="editFavorite(photo)"
         >&nbsp;<font-awesome-icon :icon="['far', 'heart']" />&nbsp;
       </a>
-      <a v-else @click="editFavorite(photo)"
+      <a
+        data-toggle="tooltip"
+        title="In Favorites"
+        v-else
+        @click="editFavorite(photo)"
         >&nbsp;<font-awesome-icon :icon="['fas', 'heart']" />&nbsp;
       </a>
     </div>
@@ -47,8 +55,6 @@ export default {
   position: absolute;
   top: 5px;
   right: 5px;
-  border: 1px solid gold;
-  border-radius: 20px;
   font-size: 13pt;
   color: gold;
 }
