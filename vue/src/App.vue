@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <a class="logo-link" href="http://localhost:8081/">
+      <a class="logo-link">
         <img src="./assets/TEGram-logo.png" id="logo" alt="Logo" />
       </a>
       <div>
